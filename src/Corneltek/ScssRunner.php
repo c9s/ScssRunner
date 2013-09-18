@@ -135,7 +135,3 @@ class ScssRunner
 
 }
 
-class SassRunner extends ScssRunner {
-    public $bin = 'sass';
-}
-
