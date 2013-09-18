@@ -1,6 +1,10 @@
 <?php
+namespace Corneltek;
 
-class ScssRunner {
+class ScssRunner 
+{
+
+    const VERSION = "1.0.1";
 
     public $bin = 'scss';
 
