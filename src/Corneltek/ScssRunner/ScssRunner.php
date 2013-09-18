@@ -4,7 +4,7 @@ namespace Corneltek\ScssRunner;
 class ScssRunner 
 {
 
-    const VERSION = "1.0.3";
+    const VERSION = "1.1.0";
 
     public $bin = 'scss';
 
