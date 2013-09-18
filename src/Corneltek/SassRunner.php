@@ -1,6 +1,5 @@
 <?php
-namespace Corneltek\SassRunner;
-use Corneltek\ScssRunner\ScssRunner;
+namespace Corneltek;
 
 class SassRunner extends ScssRunner
 {
