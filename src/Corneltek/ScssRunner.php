@@ -18,10 +18,18 @@ class ScssRunner
 
     public $debug = false;
 
+    public $loadPaths = array();
+
     public function __construct($bin = null) {
         if ( $bin ) {
             $this->bin = $bin;
         }
+    }
+
+    public function addLoadPath() {
+        $paths = func_get_args();
+        $this->loadPaths = array_merge($this->loadPaths, $paths);
+        return $this;
     }
 
     public function setQuiet($quiet = true) {
@@ -68,7 +76,18 @@ class ScssRunner
         if ( $this->debug ) {
             $cmd[] = '-g';
         }
+
+        $cmd = array_merge($cmd, $this->buildLoadPathList());
         return $cmd;
+    }
+
+    public function buildLoadPathList() {
+        $list = array();
+        foreach( $this->loadPaths as $path ) {
+            $list[] = '--load-path';
+            $list[] = $path;
+        }
+        return $list;
     }
 
     public function buildTargetList() {
