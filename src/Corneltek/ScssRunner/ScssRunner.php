@@ -1,5 +1,5 @@
 <?php
-namespace Corneltek;
+namespace Corneltek\ScssRunner;
 
 class ScssRunner 
 {
