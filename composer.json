@@ -9,7 +9,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Corneltek": "src"
+            "Corneltek\\ScssRunner": "src",
+            "Corneltek\\SassRunner": "src"
         }
     },
     "version": "1.0.2"
