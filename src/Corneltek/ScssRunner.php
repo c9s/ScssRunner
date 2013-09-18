@@ -94,6 +94,16 @@ class ScssRunner
         system( join(" ", $cmd) );
     }
 
+    public function check() 
+    {
+        $cmd = $this->buildBaseCommand($force);
+        $cmd[] = '--check';
+        $cmd = array_merge($cmd, $this->buildTargetList());
+
+        // TODO: use symfony process builder 
+        system( join(" ", $cmd) );
+    }
+
     public function watch($force = false) 
     {
         $cmd = $this->buildBaseCommand($force);
