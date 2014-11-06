@@ -20,6 +20,8 @@ class ScssRunner
 
     public $loadPaths = array();
 
+    public $sourceMap;
+
     public function __construct($bin = null) {
         if ( $bin ) {
             $this->bin = $bin;
@@ -58,12 +60,21 @@ class ScssRunner
         return $this;
     }
 
+    public function setSourceMap($sourceMap) {
+        $this->sourceMap = $sourceMap;
+        return $this;
+    }
+
     public function buildBaseCommand($force = false) {
         $cmd = array( $this->bin );
         if ( $this->enableCompass ) {
             $cmd[] = '--compass';
         }
-        if ( $force ) {
+        if ($this->sourceMap) {
+            $cmd[] = '--sourcemap';
+            $cmd[] = $this->sourceMap;
+        }
+        if ($force) {
             $cmd[] = '--force';
         }
         if ( $this->style ) {
