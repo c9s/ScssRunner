@@ -71,8 +71,7 @@ class ScssRunner
             $cmd[] = '--compass';
         }
         if ($this->sourceMap) {
-            $cmd[] = '--sourcemap';
-            $cmd[] = $this->sourceMap;
+            $cmd[] = '--sourcemap=' . $this->sourceMap;
         }
         if ($force) {
             $cmd[] = '--force';
